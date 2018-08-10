@@ -1,0 +1,74 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Document</title>
+      <style>
+          #view {
+            width: 160px;
+            height: 160px;
+            margin: 80px auto 0 auto;
+          }
+          #box div {
+              position: absolute;
+              width: 160px;
+              height: 160px;
+              font-size: 130px;
+              line-height: 160px;
+              text-align: center;
+              border: 3px solid #000;
+              background: rgba(255,200,100,.8);
+              /* transform-origin: 80px 120px; */
+          }
+          #box {
+              margin: 80px;
+              -webkit-transform-style: preserve-3d;
+              /* transform: perspective(580px); */
+              transform-origin: 80px 80px 0;
+              animation: 3s animation ease-in-out infinite;
+          }
+          #box .one {
+              transform: translateZ(80px);
+          }
+          #box .two {
+              transform: rotateX(-90deg) translateZ(80px);
+          }
+          #box .three {
+              transform: rotateX(-90deg) translateZ(-80px);
+          }
+          #box .four {
+              transform: rotateY(-90deg) translateZ(80px);
+          }
+          #box .five {
+              transform: rotateY(-90deg) translateZ(-80px);
+          }
+          #box .six {
+              transform: translateZ(-80px);;
+          }
+
+          @-webkit-keyframes animation
+            {
+                16% { -webkit-transform: rotateY(-90deg);}
+                33% { -webkit-transform: rotateY(-90deg) rotateZ(135deg);}
+                50% { -webkit-transform: rotateY(225deg) rotateZ(135deg);}
+                66% { -webkit-transform: rotateY(135deg) rotateX(135deg);}
+                83% { -webkit-transform: rotateX(135deg);}
+            }
+      </style>
+  </head>
+  <body>
+        <div id="view">
+            <div id="box">
+                <div class="one">A</div>
+                <div class="two">B</div>
+                <div class="three">C</div>
+                <div class="four">D</div>
+                <div class="five">E</div>
+                <div class="six">F</div>
+            </div>
+        </div>
+  </body>
+
+  </html>

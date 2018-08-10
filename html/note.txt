@@ -1,0 +1,57 @@
+1. 利用image 测试网速，上报数据
+img  允许跨域：crossorigin="anonymous
+测试网速作用：
+1.css二倍的高清图,网速不行让加载一倍的图；
+上报数据:
+1.做一些系统的性能监控平台,系统的bug监控平台 ， 给前端打点
+往服务器传数据， 用户特别爱点哪就做飙红啥的，做用户的锚点
+为什么不用ajax: 
+1.ajax要做数据json的一个接口,这不需要定制的接口
+2.ajax有并发，重成本，这不占业务资源
+3.ajax实时性 ,这不需要返回
+
+2.css远程攻击漏洞
+2.1 xss:
+---- background:url('javascript:alert(123)');
+        color:expressssion(alert("xss"));
+注入挖矿脚本
+----  ::content{
+}
+::after{
+content:url('javascript:alert(123);
+}
+
+节省dom,控制dom数量
+1.1个div当10个div使用
+before
+after
+宽高
+阴影：box-shadow
+border
+
+3.iframe 对远程localStorage 扩容
+跨域：
+ jsonp
+img
+<img src="图片(代码)"/>  canvas  ==> jstopng   把代码压缩进图片就可以执行跨域了
+图片要用canvas拉回来，读出来，在执行
+iframe 
+本域名的 iframe 引一个值 通过 postMessage 可以向另一个域名发送信息
+另一个域名接到信息可以把信息送回来
+cookies 同源策略  同源共享cookies
+document.domain = "baidu.com";
+localstrage 没有同源策略
+iframe 通信
+
+同源策略：
+协议不一样
+端口不一样
+域名不一样
+
+4.html语义化的重要性
+seo 优化 可以让搜索引擎更好的识别你的页面
+有利于seo和搜索引擎建立良好的有效信息
+让爬虫抓回去的信息更好分析 有助于爬虫抓取更多的有效信息
+爬虫依赖于标签来确定上下文和各个关键词的权重
+
+

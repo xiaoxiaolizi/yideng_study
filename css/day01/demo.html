@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>3d 淘宝造物节</title>
+    <style>
+        html,body {
+            width: 100%;
+            height: 1170px;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 100%;
+            height: 100%;
+            background: url('./img/bg.jpg') no-repeat center;
+            perspective: 200px;
+        }
+        .main-wrap {
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            perspective-origin: 50% 50%;
+            transform: rotateY(-300deg); 
+        }
+        .main-wrap div{
+            width: 129px;
+            height: 1170px;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <audio id="audio" autoplay loop>
+            <source src="./audio/bgm.mp3">	
+        </audio>
+        <div class="control-btns"></div>
+        <div class="main-wrap">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+            <div>11</div>
+            <div>12</div>
+            <div>13</div>
+            <div>14</div>
+            <div>15</div>
+            <div>16</div>
+            <div>17</div>
+            <div>18</div>
+            <div>19</div>
+            <div>20</div>
+        </div>
+    </div>
+    <script>
+      var arrDiv = document.querySelectorAll('.main-wrap div');
+      var num = arrDiv.length;
+      var r = getRadius(129,num);
+      var angle = 360/num;
+
+      console.log(arrDiv);
+      console.log(r,angle);
+
+      for(var i=0,len = num; i<len; i++) {
+        arrDiv[i].style.background = 'url(./img/p'+(i+1)+'.png) no-repeat center';
+        arrDiv[i].style.WebkitTransform = 'rotateY('+angle*i+'deg) translateZ('+r+'px)';
+        
+      }
+      console.log(arrDiv);
+      function getRadius(w,num) {
+        return Math.round((w/2) / (Math.tan(Math.PI / num))) - 3;
+      }
+      var box = document.querySelector('.main-wrap');
+      console.log(box)
+      var startX = 0, x = 0, endX = 0, flag = true;
+      var startY = 0, y= 0, endY = 0;
+      box.addEventListener('touchstart',function(e) {
+          console.log(e);
+          e.preventDefault();
+          var touch = e.targetTouches[0];
+          startX = touch.pageX;
+          startY = touch.pageY;
+      })
+      box.addEventListener('touchmove',function(e) {
+          if(flag){
+            e.preventDefault();
+            var touch = e.targetTouches[0];
+            endX = touch.pageX;
+            x = endX - startX;
+            endY = touch.pageY;
+            y = endY - startY;
+            box.style.WebkitTransform = 'rotateY(' + x + 'deg)';// rotateX('+y+'deg)';
+          }         
+          console.log(x)
+      })
+
+    window.addEventListener("deviceorientation", function(e) {
+    // 处理event.alpha、event.beta及event.gamma;
+        var gamma = e.gamma;
+        if(Math,abs(gamma) > 1) {
+            flag = false;
+            box.style.WebkitTransform = 'rotateY(' + gamma*3 + 'deg)';
+        }else{
+            flag = true;
+        }
+    });
+    </script>
+</body>
+</html>
