@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .top {
+            width: 50px;
+            height: 25px;
+            border-radius: 25px 25px 0 0;
+            border: 2px solid #333;
+            position: absolute;
+            top: -25px;
+            left: 45%;
+            z-index: 10;
+        }
+      .box {
+          width: 500px;
+          height: 250px;
+          border: 2px solid #333;
+          margin: 120px;
+          /* overflow: hidden; */
+          /* outline:#00FF00 solid 30px; */
+          border-radius: 250px 250px 0 0;
+          background: -webkit-linear-gradient(red, blue);
+          position: relative;
+          /*top: 100px;
+          left: 220px;
+          box-shadow: 0 0 0 50px rgba(253,138,42,0.8), 0px 0 0 30px #f0f;
+          background: -webkit-linear-gradient(red, blue); */
+          /* clip-path: inset(0px 0px 125px 0px);  */
+          /* box-shadow: 10px 10px 10px 10px #007788,-10px 10px 0px 10px #008800; */
+          /* clip-path:polygon(20px,120px,125px,125p)x; */
+      }
+      /* .box::after{
+          content: '';
+          display: block;
+          width: 350px;
+          height: 175px;
+          border: 2px solid #f0f;
+          position: absolute;
+          top: 0;
+          left: 50%;
+          margin-left: -175px;
+          border-radius: 175px 175px 0 0;
+          box-shadow: 37px 115px 0 #f5f5f5, 37px -41px 0 #f5f5f5, -41px 37px 0 #f5f5f5, 115px 37px 0 #f5f5f5;
+      }
+      .box::before{
+          content: '';
+          display: block;
+          width: 250px;
+          height: 125px;
+          border: 2px solid #0ff;
+          position: absolute;
+          top: 0;
+          left: 25%;
+          border-radius: 125px 125px 0 0;
+          box-shadow: 37px 115px 0 #f5f0f5, 37px -41px 0 #f0f5f5, -41px 37px 0 #b5f5f5, 115px 37px 0 #f005f5;
+      } */
+      .box01 {
+            width: 400px;
+            height: 250px;
+            border: 2px solid #333;
+            margin: auto;
+            border-radius: 250px 250px 0 0;
+            background: -webkit-linear-gradient(red, yellow);
+
+      }
+      .box02 {
+            width: 300px;
+            height: 250px;
+            border: 2px solid #333;
+            margin: auto;
+            border-radius: 250px 250px 0 0;
+            background: -webkit-linear-gradient(red, green);
+
+      }
+    </style>
+</head>
+<body>
+    <div class="box">
+         
+        <div class="top"></div>
+        <div class="box01">
+            <div class="box02">
+                <div class="box03">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
