@@ -1,0 +1,21 @@
+{
+  "name": "homework",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "systemjs": "^0.21.4"
+  },
+  "devDependencies": {
+    "jspm": "^0.16.53"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "jspm": {
+    "dependencies": {},
+    "devDependencies": {}
+  }
+}
